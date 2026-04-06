@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+} 
+
+@layer base {
+  :root {
+    --background: 195 40% 6%;
+    --foreground: 180 20% 90%;
+
+    --card: 190 30% 10%;
+    --card-foreground: 180 20% 90%;
+
+    --popover: 190 30% 10%;
+    --popover-foreground: 180 20% 90%;
+
+    --primary: 175 60% 45%;
+    --primary-foreground: 195 40% 6%;
+
+    --secondary: 190 25% 15%;
+    --secondary-foreground: 180 20% 85%;
+
+    --muted: 190 20% 12%;
+    --muted-foreground: 180 15% 55%;
+
+    --accent: 165 50% 35%;
+    --accent-foreground: 180 20% 92%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 190 20% 18%;
+    --input: 190 20% 18%;
+    --ring: 175 60% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --glow-primary: 175 70% 50%;
+    --glow-accent: 165 55% 40%;
+    --surface-glass: 190 30% 12%;
+    --text-whisper: 180 15% 45%;
+    --text-reveal: 175 40% 80%;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
+
+    --gradient-ocean: linear-gradient(135deg, hsl(195 40% 6%), hsl(185 35% 10%), hsl(175 30% 8%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(175 60% 45% / 0.15), transparent 70%);
+    --gradient-surface: linear-gradient(180deg, hsl(190 30% 12% / 0.6), hsl(190 30% 8% / 0.8));
+
+    --shadow-glow: 0 0 30px hsl(175 60% 45% / 0.2);
+    --shadow-glow-strong: 0 0 60px hsl(175 60% 45% / 0.35);
+    --shadow-soft: 0 8px 32px hsl(195 40% 4% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .glass-surface {
+    background: hsl(var(--surface-glass) / 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--glow-primary) / 0.4),
+                 0 0 40px hsl(var(--glow-primary) / 0.2);
+  }
+
+  .glow-ring {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-ring-strong {
+    box-shadow: var(--shadow-glow-strong);
+  }
+
+  .scene-fullscreen {
+    @apply fixed inset-0 w-screen h-screen;
+  }
+
+  .interaction-hint {
+    @apply text-sm tracking-widest uppercase;
+    color: hsl(var(--text-whisper));
+    font-family: var(--font-body);
+    font-weight: 200;
+    letter-spacing: 0.2em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}

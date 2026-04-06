@@ -1,0 +1,75 @@
+import { SceneConfig } from "./types";
+
+export const scenes: SceneConfig[] = [
+  {
+    id: "entry",
+    interaction: "tap",
+    texts: [],
+    hint: "tap anywhere to begin",
+    background: "ocean",
+  },
+  {
+    id: "memory-1",
+    interaction: "tap",
+    texts: ["heyyy monisha", "its crazy that everything led to this moment", "But i wanted to say somthing to you"],
+    hint: "tap to continue",
+    background: "night",
+  },
+  {
+    id: "hold-reveal",
+    interaction: "hold",
+    texts: ["Hold still.", "make sure you hold still ok "],
+    hint: "press and hold",
+    background: "deep",
+    revealTexts: ["idk what happend but", "talking with you made me very comfortable in a way"],
+  },
+  {
+    id: "discovery",
+    interaction: "discovery",
+    texts: ["some things you might wanna know about what i think about you"],
+    hint: "explore",
+    background: "night",
+    revealTexts: [
+      "i like that you are very kind and strong",
+      "i like how you are very elegant with your way of words",
+      "i like how you're not afraid to speak the truth",
+      "i like how you present yourself kinda cool tbh",
+    ],
+  },
+  {
+    id: "drag-reveal",
+    interaction: "drag",
+    texts: ["slid to reveal"],
+    hint: "drag to reveal",
+    background: "deep",
+    revealTexts: ["What I want to say has been here all along."],
+    dragLabel: "slide",
+  },
+  {
+    id: "build",
+    interaction: "tap",
+    texts: ["I've thought about this moment", "More times than I can count", "and i dont expect anything", "i just didn't want to hide it"],
+    hint: "tap",
+    background: "glow",
+  },
+  {
+    id: "pre-proposal",
+    interaction: "hold",
+    texts: ["i really enjoy our talks and started feeling more than just friendship"],
+    hint: "hold to continue",
+    background: "deep",
+    revealTexts: ["The question I've been carrying."],
+  },
+  {
+    id: "proposal",
+    interaction: "proposal",
+    texts: ["idk confession kaise hota hai but will you be my mine???"],
+    background: "clear",
+  },
+  {
+    id: "post-yes",
+    interaction: "final",
+    texts: ["letsssss gooooooo"],
+    background: "glow",
+  },
+];
